@@ -6,52 +6,201 @@
   <title>My Love Notes for Anshika 💕</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .photo-carousel {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
+    .notes-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .carousel-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 50px;
+      animation: fadeInScale 0.8s ease-out;
+    }
+
+    .photo-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+      animation: slideInUp 0.9s ease-out;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 250px;
       object-fit: cover;
+      display: block;
+      animation: zoomIn 1s ease-out;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .notes-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .note-card {
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.15), rgba(255, 105, 180, 0.1));
+      border-left: 4px solid #ff69b4;
+      padding: 25px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+      animation: slideInLeft 1s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .note-card:nth-child(1) { animation-delay: 0.2s; }
+    .note-card:nth-child(2) { animation-delay: 0.4s; }
+    .note-card:nth-child(3) { animation-delay: 0.6s; }
+    .note-card:nth-child(4) { animation-delay: 0.8s; }
+
+    .note-emoji {
+      font-size: 24px;
+      margin-right: 12px;
+      animation: bounce 2s infinite;
+      display: inline-block;
+    }
+
+    .note-emoji:nth-child(1) { animation-delay: 0s; }
+    .note-emoji:nth-child(2) { animation-delay: 0.2s; }
+    .note-emoji:nth-child(3) { animation-delay: 0.4s; }
+    .note-emoji:nth-child(4) { animation-delay: 0.6s; }
+
+    .note-text {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #333;
+      font-weight: 500;
+      margin: 0;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .back-button {
+      margin-top: 40px;
+      animation: fadeIn 1s ease-out 1.5s both;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>My Love Letters to Anshika 💌</h1>
+    <h1 style="animation: fadeInScale 0.8s ease-out;">My Love Letters to Anshika 💌</h1>
 
-    <!-- Photo Carousel -->
-    <div class="photo-carousel">
-      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200" alt="Us" class="carousel-img" />
-      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=200" alt="You" class="carousel-img" />
-      <img src="https://images.unsplash.com/photo-1502085945662-88ae6d7b22ae?w=200" alt="Moments" class="carousel-img" />
-      <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=200" alt="Love" class="carousel-img" />
+    <div class="notes-container">
+      <!-- Photo Gallery -->
+      <div class="photo-gallery">
+        <div class="photo-item">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400" alt="Beautiful moments" />
+        </div>
+        <div class="photo-item">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400" alt="Your beauty" />
+        </div>
+        <div class="photo-item">
+          <img src="https://images.unsplash.com/photo-1502085945662-88ae6d7b22ae?w=400" alt="Us together" />
+        </div>
+        <div class="photo-item">
+          <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=400" alt="Our love" />
+        </div>
+      </div>
+
+      <!-- Notes Section -->
+      <div class="notes-section">
+        <div class="note-card">
+          <span class="note-emoji">💕</span>
+          <p class="note-text">Your smile makes every single day worth living. I never knew happiness could be this simple until I met you, Anshika.</p>
+        </div>
+
+        <div class="note-card">
+          <span class="note-emoji">✨</span>
+          <p class="note-text">When I'm with you, time feels like it stops. Every moment becomes a memory I want to keep forever in my heart.</p>
+        </div>
+
+        <div class="note-card">
+          <span class="note-emoji">🔥</span>
+          <p class="note-text">You make winter feel warm just by being near me. Your presence is my favorite kind of magic, pure and enchanting.</p>
+        </div>
+
+        <div class="note-card">
+          <span class="note-emoji">💘</span>
+          <p class="note-text">Forever isn't long enough with you, but every single moment is a gift I'll treasure always. You complete me, Anshika.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="notes">
-      <div class="note">💕 Your smile makes every single day worth living. I never knew happiness could be this simple until I met you.</div>
-      
-      <div class="note">✨ When I’m with you, time feels like it stops. Every moment becomes a memory I want to keep forever.</div>
-      
-      <div class="note">You make winter feel warm just by being near me. Your presence is my favorite kind of magic.</div>
-      
-      <div class="note">🐘 The way you laugh, the way you care, the way you love—everything about you makes my heart race.</div>
-
-      <div class="note">You’re not just my girlfriend, Anshika. You’re my best friend, my inspiration, and my greatest adventure.</div>
-
-      <div class="note">🙏 Thank you for being the most incredible, beautiful, and amazing person I know. I’m so lucky to call you mine.</div>
-
-      <div class="note">💕 Forever isn’t long enough with you, but every moment is a gift I’ll treasure always.</div>
+    <div class="back-button">
+      <a href="gallery.html" class="button">View Gallery 👅</a>
     </div>
-
-    <br /><br />
-    <a href="gallery.html" class="button">View Gallery 👅</a>
   </div>
 
   <script src="script.js"></script>
